@@ -1,8 +1,10 @@
 Bu yazımda bir açık kaynak WordPress eklentisi olan “Contact Form 7” için karakter filtrelerini ekleme ve düzenleme işlemlerini anlatacağım. Injection saldırılarına karşı koruma sağlamak ya da sadece belirli istemediğiniz karakterleri/kelimeleri filtrelemek için bu yöntemi kullanabilirsiniz. Anlatacağım düzenlemeler Contact Form 7’nin 5.0.5 sürümü için geçerlidir. İşlemlere başlamadan önce gerekli yedeklemeleri yapmanızı tavsiye ederim.
 Anlatacağım işlemler aşağıdaki dosyaları düzenlemekten ibarettir;
+
 contact-form-7/includes/formatting.php
 contact-form-7/modules/*.php (Değişiklik yapmak istediğiniz girdi bölümü)(e-mail, url vb. alanlar text.php içerisinde yer almaktadır)
-	Öncelikle söylemek isterim ki gerekli yedeklemeleri yaptıktan sonra eklentinin dosyaları üzerinde değişiklik yapmaktan çekinmeyin; Contact Form 7 oldukça esnek bir eklenti. Anlatacağım değişiklikler oldukça temel ve basit değişiklikler; anlatmamın temel sebebi değişiklik yapmak isteyenlerin bunlara bakarak kolayca eklentinin çalışma mantığını anlayabilmesi böylece kendi isteklerine göre değişiklikleri yapabilmesi.
+
+Öncelikle söylemek isterim ki gerekli yedeklemeleri yaptıktan sonra eklentinin dosyaları üzerinde değişiklik yapmaktan çekinmeyin; Contact Form 7 oldukça esnek bir eklenti. Anlatacağım değişiklikler oldukça temel ve basit değişiklikler; anlatmamın temel sebebi değişiklik yapmak isteyenlerin bunlara bakarak kolayca eklentinin çalışma mantığını anlayabilmesi böylece kendi isteklerine göre değişiklikleri yapabilmesi.
 	Filtrelemelere öncelikle  “formatting.php” dosyasından başlıyoruz. Bu dosyada “wpcf7_is_*“ parametreleri tutuluyor. Bu parametreler istediğimiz filtrelemeleri yapmamızı sağlıyor. Örneğin “Telefon” girdi alanına uygulanan filtrelemeyi ele alırsak;
   
 ```php
